@@ -25,7 +25,9 @@ const Map = ({pickupCoordinates, dropoffCoordinates}) => {
                 // When active the map will receive updates to the device's location as it changes.
                 trackUserLocation: true,
                 // Draw an arrow next to the location dot to indicate which direction the device is heading.
-                showUserHeading: true
+                showUserHeading: true,
+                // Show user location by default
+                showUserLocation: true
                 })
         );
 
@@ -43,7 +45,7 @@ const Map = ({pickupCoordinates, dropoffCoordinates}) => {
                 pickupCoordinates,
                 dropoffCoordinates
             ], {
-                padding: 60
+                padding: 80
             })
         }
 

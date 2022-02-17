@@ -74,7 +74,7 @@ const Wrapper = tw.div`
 bg-gray-200 h-screen
 `
 const ButtonContainer = tw.div`
-bg-white px-4
+bg-white top-4 left-4
 `
 const BackButton = tw.img`
 h-10 hover:bg-slate-50 active:bg-slate-100 rounded-full cursor-pointer
@@ -101,14 +101,14 @@ const Input = tw.input`
 h-10 bg-gray-200 my-2 rounded-2 p-2 outline-none border-none
 `
 const PlusIcon = tw.img`
-w-10 h-10 bg-gray-200 rounded-full ml-3 cursor-pointer
+w-10 h-10 bg-gray-200 rounded-full ml-3 active:scale-95 cursor-pointer
 `
 const SavedPlaces = tw.div`
-flex items-center bg-white px-4 py-2 hover:bg-slate-50 active:bg-slate-100 cursor-pointer
+flex items-center bg-white px-4 py-2
 `
 const StarIcon = tw.img`
 bg-amber-300 w-10 h-10 p-2 rounded-full mr-2
 `
 const ConfirmButton = tw.div`
-h-10 bg-black my-4 mx-24 text-white text-lg flex items-center justify-center rounded-lg active:scale-95 cursor-pointer
+h-10 bg-black my-4 mx-24 text-white text-lg font-medium flex items-center justify-center rounded-lg active:scale-95 cursor-pointer
 `

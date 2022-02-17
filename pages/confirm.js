@@ -28,6 +28,9 @@ const Confirm = () => {
             // display the coordinates from the data array
             setPickupCoordinates(data.features[0].center)
         })
+        .catch(err => {
+            console.error('No pickup location was entered!')
+        })
     }
 
     const getDropoffCoordinates = (dropoff) => {
@@ -40,6 +43,9 @@ const Confirm = () => {
         .then(res => res.json())
         .then(data => {
             setDropoffCoordinates(data.features[0].center)
+        })
+        .catch(err => {
+            console.error('No dropoff location was entered!')
         })
     }
 
@@ -56,11 +62,13 @@ const Confirm = () => {
                 </Link>
             </ButtonContainer>
 
-            <Map
+            <MapContainer>
+                <Map
                 // pass the coordinate variables as props
                 pickupCoordinates = {pickupCoordinates}
                 dropoffCoordinates = {dropoffCoordinates}
-            />
+                />
+            </MapContainer>
 
             <RideContainer>
                 <RideSelector
@@ -68,9 +76,12 @@ const Confirm = () => {
                     pickupCoordinates = {pickupCoordinates}
                     dropoffCoordinates = {dropoffCoordinates}
                 />
-                <ConfirmButtonContainer>
-                    Confirm UberX
-                </ConfirmButtonContainer>
+                <Link href={'/'}>
+                    <ConfirmButtonContainer>
+                        Confirm UberX
+                    </ConfirmButtonContainer>
+                </Link>
+                
             </RideContainer>
         </Wrapper>
     )
@@ -90,6 +101,9 @@ h-10 object-contain
 const RideContainer = tw.div`
 flex flex-col flex-1 h-1/2 
 `
+const MapContainer = tw.div`
+flex-1
+`
 const ConfirmButtonContainer = tw.div`
-h-10 bg-black my-4 mx-24 text-white text-lg flex items-center justify-center rounded-lg active:scale-95 cursor-pointer
+h-10 bg-black my-4 mx-24 text-white text-lg font-medium flex items-center justify-center rounded-lg active:scale-95 cursor-pointer
 `
