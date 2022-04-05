@@ -1,4 +1,3 @@
-import styles from '../styles/Home.module.css'
 import tw from 'tailwind-styled-components'
 import Map from './components/Map'
 import Link from 'next/link'
