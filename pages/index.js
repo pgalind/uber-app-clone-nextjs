@@ -31,7 +31,7 @@ export default function Home() {
                     photoUrl: user.photoURL
                 })
             } else {
-                //setUser(null)
+                setUser(null)
                 router.push('/login')
             }
         })
