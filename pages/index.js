@@ -6,16 +6,6 @@ import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
-/*
-Notes:
-This is how you would normally apply css styles to divs; give each div an appropriate className and define it in the /styles/Home.module.css file
-
-    <div className={styles.container}>
-        <div className={styles.map}>Map</div>
-        <div className={styles.menu}>Menu</div>
-    </div>
-*/
-
 // using tailwind css
 export default function Home() {
 
@@ -34,7 +24,7 @@ export default function Home() {
                 router.push('/login')
             }
         })
-    }, [])
+    }, [router])
 
     return (
         <Wrapper>
@@ -47,12 +37,12 @@ export default function Home() {
                         </Profile>
                     </Header>
 
-                    <Link href='/search'>
+                    <Link href='/search' passHref>
                         <InputButton>Where to?</InputButton>
                     </Link>
 
                     <ActionButtons>
-                        <Link href='/search'>
+                        <Link href='/search' passHref>
                             <Button>
                                 <ButtonImage src='https://i.ibb.co/cyvcpfF/uberx.png' />
                                 Ride

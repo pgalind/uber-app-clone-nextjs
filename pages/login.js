@@ -15,7 +15,7 @@ const Login = () => {
                 router.push('/') // if user exists, send me to home page
             }
         })
-    }, [])
+    }, [router])
 
     return (
         <Wrapper>
